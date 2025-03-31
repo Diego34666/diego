@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dj2ake5ok4k2s"]
+
+[ext_resource type="Texture2D" uid="uid://vohmf5o8wjpg" path="res://sprites de godot/Board.png" id="1_3gabu"]
+[ext_resource type="Texture2D" uid="uid://bym5s2q0wfrv" path="res://sprites de godot/pixel-art-seamless-pattern-brick-texture-vector-30705377.jpg" id="2_jm3l6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1rd8"]
+size = Vector2(64, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sqyy"]
+size = Vector2(64, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bctyd"]
+size = Vector2(1184, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77uu0"]
+size = Vector2(1184, 56)
+
+[node name="pong" type="Node2D"]
+
+[node name="fondo" type="Sprite2D" parent="."]
+position = Vector2(578, 325.25)
+scale = Vector2(1.43641, 1.41429)
+texture = ExtResource("1_3gabu")
+
+[node name="pared izquierda" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="pared izquierda"]
+position = Vector2(0, 360)
+scale = Vector2(0.0652941, 0.666667)
+texture = ExtResource("2_jm3l6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared izquierda"]
+position = Vector2(0, 324)
+shape = SubResource("RectangleShape2D_l1rd8")
+
+[node name="pared derecha" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="pared derecha"]
+position = Vector2(1120, 361)
+scale = Vector2(0.066, 0.664815)
+texture = ExtResource("2_jm3l6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared derecha"]
+position = Vector2(1120, 320)
+shape = SubResource("RectangleShape2D_1sqyy")
+
+[node name="techo" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="techo"]
+position = Vector2(560, 0)
+shape = SubResource("RectangleShape2D_bctyd")
+
+[node name="piso" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso"]
+position = Vector2(560, 644)
+shape = SubResource("RectangleShape2D_77uu0")
